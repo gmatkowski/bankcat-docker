@@ -1,0 +1,66 @@
+version: '3.7'
+services:
+  bankcat_php:
+    container_name: bankcat_php
+    build:
+      context: ./docker/php
+      dockerfile: Dockerfile
+    volumes:
+      - ../backend:/var/www/bankcat/backend
+      - ../frontend:/var/www/bankcat/frontend
+    expose:
+      - 9000
+    ports:
+      - "50051:50051"
+    networks:
+      - bankcat
+
+  bankcat_nginx:
+    container_name: bankcat_nginx
+    image: nginx:1.22.0
+    volumes:
+      - ../backend:/var/www/bankcat/backend
+      - ../frontend:/var/www/bankcat/frontend
+      - ./docker/nginx/ssl:/etc/nginx/ssl/
+      - ./docker/nginx/services:/etc/nginx/conf.d/
+      - ./docker/nginx/logs:/var/log/nginx
+    environment:
+      - COMPOSER_MEMORY_LIMIT=-1
+    ports:
+      - 443:443
+      - 80:8080
+    networks:
+      - bankcat
+
+  bankcat_db:
+    container_name: bankcat_db
+    build:
+      context: ./docker/postgres
+      dockerfile: Dockerfile
+    volumes:
+      - bankcat_db_volume:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_MULTIPLE_DATABASES="testing"
+      - POSTGRES_DB=bankcat
+      - POSTGRES_USER=app
+      - POSTGRES_PASSWORD=app
+      - LC_ALL=C.UTF-8
+    ports:
+      - "5432:5432"
+    networks:
+      - bankcat
+
+  bankcat_mailhog:
+    container_name: bankcat_mailhog
+    image: mailhog/mailhog
+    ports:
+     - "8025:8025"
+    networks:
+    - bankcat
+
+volumes:
+  bankcat_db_volume:
+    driver: local
+
+networks:
+  bankcat:
