@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1d36981c-88b1-4135-9605-9e60205a6f43" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/php/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/docker/php/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +40,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../pokato/app/www/core" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -71,7 +71,12 @@
       <updated>1655746166668</updated>
       <workItem from="1655746167971" duration="805000" />
       <workItem from="1655747075069" duration="64000" />
-      <workItem from="1655747149242" duration="4308000" />
+      <workItem from="1655747149242" duration="5616000" />
+      <workItem from="1655880856354" duration="1334000" />
+      <workItem from="1656236900124" duration="1719000" />
+      <workItem from="1656417700620" duration="7000" />
+      <workItem from="1656417796149" duration="34000" />
+      <workItem from="1656686900421" duration="930000" />
     </task>
     <servers />
   </component>

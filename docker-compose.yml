@@ -41,7 +41,7 @@ services:
       - bankcat_db_volume:/var/lib/postgresql/data
     environment:
       - POSTGRES_MULTIPLE_DATABASES="testing"
-      - POSTGRES_DB=bankcat
+      - POSTGRES_DB=app
       - POSTGRES_USER=app
       - POSTGRES_PASSWORD=app
       - LC_ALL=C.UTF-8
